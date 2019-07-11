@@ -1,15 +1,20 @@
 QT += widgets
 
+#OBJECTS_DIR  = tmp
+#MOC_DIR      = tmp
+
 HEADERS += \
     mainwindow.h \
     commandtab.h \
-    optionsdialog.h
+    optionsdialog.h \
+    extensionwidget.h
 
 SOURCES += \
     mainwindow.cpp \
     main.cpp \
     commandtab.cpp \
-    optionsdialog.cpp
+    optionsdialog.cpp \
+    extensionwidget.cpp
 
 RESOURCES += \
     mainwindow.qrc

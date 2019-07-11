@@ -11,11 +11,16 @@
 #include <QIcon>
 #include <QPushButton>
 #include <QHBoxLayout>
+#include "extensionwidget.h"
 
 class OptionsDialog : public QDialog
 {
+    Q_OBJECT
 public:
     OptionsDialog(HJYD_GSA::rdv_conf &conf, QWidget *parent = nullptr);
+
+private slots:
+    void extensionVisible(bool visible);
 
 private:
     QString moreStr = "More >>";
@@ -34,30 +39,14 @@ private:
     QLineEdit *localIpEdit;
     QLabel *localPortLabel;
     QLineEdit *localPortEdit;
+
     QGridLayout *vdrOptionsLayout;
     QPushButton *moreButton;
     QPushButton *closeButton;
-    QLabel *cmdLabel;
-    QLineEdit *cmdEdit;
-    QLabel *stepLabel;
-    QLineEdit *stepEdit;
-    QLabel *loadLabel;
-    QLineEdit *loadEdit;
-    QLabel *initLabel;
-    QLineEdit *initEdit;
-    QLabel *startLabel;
-    QLineEdit *startEdit;
-    QLabel *freezeLabel;
-    QLineEdit *freezeEdit;
-    QLabel *unfreezeLabel;
-    QLineEdit *unfreezeEdit;
-    QLabel *speedLabel;
-    QLineEdit *speedEdit;
-    QLabel *finishLabel;
-    QLineEdit *finishEdit;
-    QWidget *extension;
+
+    ExtensionWidget *extension;
     QDialogButtonBox *buttonBox;
-    QGridLayout *cmdLayout;
+
     QVBoxLayout *mainLayout;
 };
 
